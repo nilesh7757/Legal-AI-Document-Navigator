@@ -14,15 +14,18 @@ function App() {
       {/* Navbar at the top always */}
       <Navbar />
       
-      {/* Page routes */}
-      <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/chatbot" element={<Chatbot />} />
-      <Route path="/summary" element={<Summary />} />
-      <Route path="/lawyers" element={<Lawyers />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      </Routes>
+      {/* Page routes with top padding for fixed navbar */}
+      <main className="pt-20">
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/chatbot" element={<Chatbot />} />
+    <Route path="/summary" element={<Summary />} />
+    <Route path="/lawyers" element={<Lawyers />} />
+    <Route path="/login" element={<Login />} />
+    <Route path="/signup" element={<Signup />} />
+  </Routes>
+</main>
+
 
     </Router>
   );

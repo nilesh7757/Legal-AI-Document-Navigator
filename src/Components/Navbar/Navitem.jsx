@@ -8,12 +8,11 @@ const NavItem = ({ to, label }) => {
       className="relative inline-block px-2 py-1 group"
     >
       {/* Text */}
-      <span className="text-gray-700 transition-colors duration-300 group-hover:text-blue-600">
+      <span className="relative text-gray-700 transition-colors duration-300 group-hover:text-black">
         {label}
+        {/* Animated underline */}
+        <span className="absolute rounded-full left-0 -bottom-1 h-[2px] w-0 bg-black transition-all duration-300 group-hover:w-full"></span>
       </span>
-
-      {/* Animated underline */}
-      <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
     </Link>
   );
 };
