@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-sm shadow-lg">
+      <nav className="fixed rounded-xl mx-2 sm:mx-3 md:mx-4 top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-sm shadow-lg">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 py-3 flex items-center justify-between">
           {/* Logo */}
           <div className="flex-shrink-0 text-2xl font-bold text-gray-800">
@@ -71,7 +71,7 @@ const Navbar = () => {
 
       {/* Sidebar (Mobile Only) */}
       <div
-        className={`fixed top-0 right-0 h-min w-64 rounded-xl m-2 bg-white shadow-xl transform transition-transform duration-300 z-60 flex flex-col ${
+        className={`fixed top-0 -right-2 h-min w-64 rounded-xl m-2 bg-white shadow-xl transform transition-transform duration-300 z-60 flex flex-col ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

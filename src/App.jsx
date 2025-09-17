@@ -15,16 +15,16 @@ function App() {
       <Navbar />
       
       {/* Page routes with top padding for fixed navbar */}
-      <main className="pt-20">
-  <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/chatbot" element={<Chatbot />} />
-    <Route path="/summary" element={<Summary />} />
-    <Route path="/lawyers" element={<Lawyers />} />
-    <Route path="/login" element={<Login />} />
-    <Route path="/signup" element={<Signup />} />
-  </Routes>
-</main>
+      <main className="pt-20 bg-gray-50">
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/chatbot" element={<Chatbot />} />
+      <Route path="/summary" element={<Summary />} />
+      <Route path="/lawyers" element={<Lawyers />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<Signup />} />
+    </Routes>
+    </main>
 
 
     </Router>
