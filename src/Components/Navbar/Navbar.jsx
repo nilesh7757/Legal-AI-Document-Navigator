@@ -6,13 +6,14 @@ import { User, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const isSignedIn = true; // mock auth state
+  const isSignedIn = false; // mock auth state
 
   const navLinks = [
     { to: "/", label: "Home" },
-    { to: "/chatbot", label: "Chatbot" },
-    { to: "/summary", label: "Summary" },
-    { to: "/lawyers", label: "Lawyers" },
+    { to: "/document-analyser", label: "Document Analyser" },
+    { to: "/document-creation", label: "Document Creation" },
+    { to: "/lawyer-connect", label: "Lawyer Connect" },
+    { to: "/my-documents", label: "My Documents" },
   ];
 
   return (
@@ -39,21 +40,14 @@ const Navbar = () => {
                 <User className="w-6 h-6 text-gray-700" />
               </button>
             ) : (
-              <>
-                <Link to="/login">
-                  <Button
-                    variant="outline"
-                    className="px-4 outline-1 rounded-lg hover:bg-black hover:text-white cursor-pointer"
-                  >
-                    Sign In
-                  </Button>
-                </Link>
-                <Link to="/signup">
-                  <Button className="px-4 bg-black outline-black outline-1 hover:bg-white hover:text-black cursor-pointer text-white rounded-lg">
-                    Sign Up
-                  </Button>
-                </Link>
-              </>
+              <Link to="/login">
+                <Button
+                  variant="outline"
+                  className="px-4 outline-1 rounded-lg hover:bg-black hover:text-white cursor-pointer"
+                >
+                  Login
+                </Button>
+              </Link>
             )}
           </div>
 
@@ -90,8 +84,9 @@ const Navbar = () => {
         <div className="flex flex-col p-4 space-y-4 text-gray-700 font-medium">
           {navLinks.map((link, index) => (
             <div 
+            key={index}
             onClick={() => setIsOpen(false)}>
-              <NavItem key={index} to={link.to} label={link.label} />
+              <NavItem to={link.to} label={link.label} />
             </div>
           ))}
         </div>
@@ -103,21 +98,14 @@ const Navbar = () => {
               <User className="w-6 h-6 text-gray-700" />
             </button>
           ) : (
-            <div className="flex flex-col space-y-3">
-              <Link to="/login" onClick={() => setIsOpen(false)}>
-                <Button
-                  variant="outline"
-                  className="w-full outline-1 rounded-lg hover:bg-black hover:text-white cursor-pointer"
-                >
-                  Sign In
-                </Button>
-              </Link>
-              <Link to="/signup" onClick={() => setIsOpen(false)}>
-                <Button className="w-full bg-black outline-black outline-1 hover:bg-white hover:text-black cursor-pointer text-white rounded-lg">
-                  Sign Up
-                </Button>
-              </Link>
-            </div>
+            <Link to="/login" onClick={() => setIsOpen(false)}>
+              <Button
+                variant="outline"
+                className="w-full outline-1 rounded-lg hover:bg-black hover:text-white cursor-pointer"
+              >
+                Login
+              </Button>
+            </Link>
           )}
         </div>
       </div>
